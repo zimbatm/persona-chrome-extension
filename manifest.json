@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "Persona",
+  "description": "Browser ID is the best",
+  "version": "0.1",
+  "icons": { "128": "icon_128.png" },
+
+  "browser_action": {
+    "default_title": "Persona",
+    "default_icon": "icon_19.png",
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://*/*"],
+      "js": ["browserid.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+
+  "permissions": [
+    "https://*/"
+  ]
+}
